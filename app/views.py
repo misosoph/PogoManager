@@ -14,11 +14,11 @@ import json
 import StringIO
 import csv
 
+sys.path.append(os.path.dirname(os.path.realpath(__file__)))
 # import Pokemon Go API lib
 from pgoapi import pgoapi
 from pgoapi import utilities as util
 
-sys.path.append(os.path.dirname(os.path.realpath(__file__)))
 log = logging.getLogger(__name__)
 
 # route for handling the login page logic
@@ -26,7 +26,7 @@ log = logging.getLogger(__name__)
 def login():
     if request.method == 'POST':
         try:
-            pokemon_list = json.load(open('app/pokemon.en.json'))
+            pokemon_list = json.load(open('app/pokemon.json'))
         except IOError, error:
             print "The selected language is currently not supported"
             return render_template('results.html', contents=error)
@@ -43,7 +43,7 @@ def login():
         # set player position on the earth
         api.set_position(*position)
     
-        if not api.login('google', request.form['username'], request.form['password'], app_simulation = True):
+        if not api.login(request.form['auth'], request.form['username'], request.form['password'], app_simulation = True):
             contents = 'Login failed for '+request.form['username']
         else:
             # get player profile + inventory call (thread-safe/chaining example)

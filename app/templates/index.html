@@ -1,19 +1,23 @@
 <html>
   <head>
-    <title>Pokemanager - login page</title>
+    <title>Pokemanager</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
   </head>
-  <body>
+  <body  style="font-family: sans-serif">
     <div class="container">
-      <h1>Please login</h1>
+      <h2>Get Pokemon Stats</h2>
       <br>
       <form action="" method="post">
+        <select name="auth">
+           <option value="google">Google Login</option>
+           <option value="ptc">PTC Login</option>
+        </select> 
         <input type="text" placeholder="Username" name="username" value="{{
           request.form.username }}">
          <input type="password" placeholder="Password" name="password" value="{{
           request.form.password }}">
-        <input class="btn btn-default" type="submit" value="Login">
+        <input class="btn btn-default" type="submit" value="Download">
       </form>
       {% if error %}
         <p class="error"><strong>Error:</strong> {{ error }}
