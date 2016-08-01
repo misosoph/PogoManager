@@ -1,0 +1,10 @@
+Flask==0.11.1
+Jinja2==2.8
+MarkupSafe==0.23
+Werkzeug==0.11.10
+geopy==1.11.0
+protobuf>=3.0.0a3
+requests==2.10.0
+s2sphere==0.2.4
+gpsoauth==0.3.0
+six
