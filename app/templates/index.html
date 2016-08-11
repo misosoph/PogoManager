@@ -17,7 +17,11 @@
           request.form.username }}">
          <input type="password" placeholder="Password" name="password" value="{{
           request.form.password }}">
-        <input class="btn btn-default" type="submit" value="Download">
+        <input class="btn btn-default" type="submit" name="type" value="Show My Raw Data">
+        <input class="btn btn-default" type="submit" name="type" value="Show My Poke">
+        <input class="btn btn-default" type="submit" name="type" value="Download CSV">
+        <br>
+        <input class="btn btn-default" type="submit" name="type" value="Show Raw Game Data">
       </form>
       {% if error %}
         <p class="error"><strong>Error:</strong> {{ error }}

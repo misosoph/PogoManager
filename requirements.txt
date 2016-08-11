@@ -8,3 +8,4 @@ requests==2.10.0
 s2sphere==0.2.4
 gpsoauth==0.3.0
 six
+git+https://github.com/keyphact/pgoapi.git@691aff2543c39ba929e4aa0e325dc43d24cb24df#egg=pgoapi
